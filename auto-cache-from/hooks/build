@@ -2,6 +2,7 @@
 
 set -e
 
+# Previous to build the image, to pull the image used for the cache memory
 echo "Pulling pchico83/ci..."
 docker pull pchico83/ci > /dev/null
 echo "done!"

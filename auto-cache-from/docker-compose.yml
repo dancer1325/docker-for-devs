@@ -3,7 +3,7 @@ services:
   web:
     image: pchico83/ci
     build:
-      cache_from:
+      cache_from: # Image to be used as cache memory for the next docker operations
         - pchico83/ci
       context: .
     depends_on:

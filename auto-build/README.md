@@ -5,7 +5,7 @@
     * Solution: `docker build .` to build the image previously
 # How to test it?
 * Go to localhost:5000 to check the response
-# Note:
+# Notes:
 * `docker compose exec -it NameOfTheContainerWeb bash`
   * Command to go into the container
   * `env`
@@ -15,3 +15,5 @@
       * `ping redis`
 * `docker inspect containerId`
   * Check IPAddress attribute
+* /hooks folder
+  * Define webhooks to be followed each time a commit is done to the branch

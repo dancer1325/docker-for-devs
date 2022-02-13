@@ -13,9 +13,11 @@ services:
   redis:
     image: redis
   test:
-    build:
+#    image: pchico83/ci  # If you execute unit tests --> No sense to use another image
+    build:  # Build another small service, just to run the commands indicated in the file test.sh
+      # It wouldn't be necessary if we add the test.sh file as volume instead of doing building the image
       context: .
       dockerfile: Dockerfile.test
-    depends_on:
+    depends_on:  # Make sure that this service is start up just in case the other one is up
       - web
     command: sh /ci/test.sh
