@@ -1,0 +1,10 @@
+services:
+  app:
+    image: myapp  # Name the image
+    build: # Declare how to build the image
+      context: ../flask-alpine # Context directory. It's the minimum information and the rest would be the default parameters
+      dockerfile: Dockerfile
+#     Define repetitive arguments to build the imagedd
+#      args:
+#        - arg1=val1
+#        - arg2=val2

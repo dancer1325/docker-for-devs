@@ -2,7 +2,7 @@
 FROM alpine:latest
 # Initialize the image with the file system own of alpine
 
-# RUN apk add --update python py-pip
+# RUN apk add --update python py-pipd
 # python py-pip is deprecated
 RUN apk add --update python3 py3-pip
 # Run allows executing a command into the file system

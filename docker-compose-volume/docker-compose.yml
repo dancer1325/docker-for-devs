@@ -1,0 +1,17 @@
+services:
+  mysql:
+    platform: linux/x86_64 # Required to work on M1
+    image: mysql:5.7
+    volumes:
+      - data:/var/lib/mysql
+      - logs:/var/log/mysql
+      - /etc:/etc
+  analyzer:
+#    image: log-analyzer # Docker image doesn't exist
+    image: fluentd
+    volumes:
+      - logs:/var/log:ro
+volumes:
+  data:
+  logs:
+

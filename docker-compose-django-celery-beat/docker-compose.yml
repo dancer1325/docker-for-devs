@@ -1,0 +1,19 @@
+services:
+  api:
+    image: app
+    build: .
+    command: gunicorn -b 0.0.0.0:80 -w 8 app.wsgi
+
+  worker:
+    image: app # Use the image built in the api service
+    entrypoint: celery -A app
+    command: worker -c 8 -P prefork -O fair
+
+  beat:
+    # Extend from another configuration
+    # 1) Repeat the code
+#    image: app # Use the image built in the api service
+#    entrypoint: celery -A app
+    # 2) using extends
+    extends: worker
+    command: beat

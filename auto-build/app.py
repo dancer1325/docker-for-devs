@@ -5,6 +5,7 @@ import socket
 
 app = Flask(__name__)
 redis = Redis(host="redis")
+# Using service discovery to communicate with redis container
 
 
 @app.route("/")

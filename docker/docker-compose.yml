@@ -1,8 +1,8 @@
 version: "3.2"
 services:
   docker:
-    image: docker:17.10
+    image: docker:17.10 # Docker image
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/var/run/docker.sock # Path of the socket
     entrypoint: docker
     command: ps

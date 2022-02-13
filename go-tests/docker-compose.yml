@@ -1,8 +1,11 @@
 version: '3.2'
 services:
   test:
+    # There is no build attribute --> It won't build the image
     image: golang:${GO_VERSION:-1.9}
+    # ${GO_VERSION:-1.9} is bash notation.
+    # Version's tag comes declared in that variable. If it's not defined --> Use 1.9 by default
     working_dir: /go/src/app
     volumes:
-      - ${PWD}:/go/src/app
-    command: go test ./...
+      - ${PWD}:/go/src/app # ${PWD}  It's my current directory
+    command: go test ./... # Command to run tests

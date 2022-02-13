@@ -1,0 +1,18 @@
+services:
+  proxy: # Name of the container to be created
+    image: busybox # Embedded Linux distribution combining tiny versions of many common UNIX utilities
+    networks:
+      - outside
+  app:   # Name of the container to be created
+    image: busybox
+    networks:
+      - default
+      - inside
+networks:
+  outside:
+    external: true  # Use pre-existing network, instead of being created a new one. By default, it's false
+  default:  # No specification --> The default one that automatically docker creates
+  inside:
+    # Since external property isn't indicated --> A new network will be created
+    driver: bridge
+    enable_ipv6: true

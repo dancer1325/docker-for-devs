@@ -1,0 +1,19 @@
+# Declare 2 containers/services: 1) db, 2) wordpress
+# Rest of the lines are a direct map to some docker run command's argument
+services:
+  db:
+    platform: linux/x86_64 # Required to work on M1
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+  wordpress:
+    image: wordpress:latest
+    # depends_on
+    # Option which doesn't exist on docker run.
+    # 1) Define order / dependency in the containers
+    # 2) Firstly wordpress will be up. Secondly db container
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
