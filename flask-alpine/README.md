@@ -9,4 +9,4 @@
 
 ## Updates
 * `itsdangerous==2.0.1` in requirements.txt
-  * Reason: It was failing in the moment to up the container https://stackoverflow.com/questions/71189819/python-docker-importerror-cannot-import-name-json-from-itsdangerous
+  * Reason: It was failing at the moment to up the container https://stackoverflow.com/questions/71189819/python-docker-importerror-cannot-import-name-json-from-itsdangerous
