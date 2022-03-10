@@ -4,6 +4,7 @@ WORKDIR /app
 
 EXPOSE 80
 
+# Add the environment variable NAME:World
 ENV NAME World
 
 CMD ["python", "app.py"]
